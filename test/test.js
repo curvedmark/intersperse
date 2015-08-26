@@ -27,4 +27,23 @@ describe('intersperse', function () {
 		assert.deepEqual(newArr, [1, 'a', 2, 'a', 3]);
 		assert.deepEqual(arr, [1, 2, 3]);
 	});
+
+	it("should accept function as a parameter", function () {
+		var arr = [1, 2, 3];
+		var newArr = intersperse(arr, function() {
+			return 'a';
+		});
+
+		assert.deepEqual(newArr, [1, 'a', 2, 'a', 3]);
+		assert.deepEqual(arr, [1, 2, 3]);
+	});
+
+	it("should input previous, next and index values for function", function () {
+		var arr = [1, 2];
+		var newArr = intersperse(arr, function(prev, next, i) {
+			assert.equal(prev, 1);
+			assert.equal(next, 2);
+			assert.equal(i, 1);
+		});
+	});
 });
