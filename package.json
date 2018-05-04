@@ -1,6 +1,6 @@
 {
   "name": "intersperse",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Add an object to an array between each element",
   "main": "lib/intersperse.js",
   "directories": {
